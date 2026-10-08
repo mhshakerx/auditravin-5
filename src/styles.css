@@ -1,0 +1,49 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f1ec;
+  --color-line: #e2dfd6;
+  --color-line-strong: #cbc6b8;
+  --color-ink: #201c17;
+  --color-ink-soft: #5b564c;
+  --color-ink-faint: #8b8578;
+  --color-wine: #7a1230;
+  --color-wine-deep: #56061f;
+  --color-wine-tint: #f7e8ec;
+  --color-gold: #a9802f;
+  --color-gold-tint: #f7efdd;
+  --color-pass: #1e6b3e;
+  --color-pass-tint: #e6f2ea;
+  --color-partial: #a9720c;
+  --color-partial-tint: #fbf0dc;
+  --color-fail: #a3281e;
+  --color-fail-tint: #fbe8e6;
+  --font-sans: "Cairo", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  @apply m-0 bg-bg text-ink font-sans;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-wine);
+  color: #fff;
+}
+
+.field-input {
+  @apply w-full rounded-[3px] border border-line-strong bg-surface px-3 py-2.5 text-[15px] text-ink outline-none transition focus:border-wine focus:ring-2 focus:ring-wine/20;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-[3px] border border-line-strong bg-surface px-4 py-2 text-sm font-bold text-ink transition hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-60;
+}
+.btn-primary {
+  @apply border-wine bg-wine text-white hover:bg-wine-deep;
+}
+.btn-danger {
+  @apply border-fail/40 text-fail hover:bg-fail-tint;
+}
